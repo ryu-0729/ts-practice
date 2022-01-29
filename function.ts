@@ -39,3 +39,41 @@ console.log(sort(a, s => s.toLowerCase()))
 callback = (name: string): void => {} */
 // 上記を1行で
 let callback = (name: string): void => {}
+
+// デフォルト引数
+const f = (fName = '小動物', favorite = '牛乳') => (
+    console.log(`${fName}は${favorite}が大好きです`)
+)
+f()
+
+// 関数を含むオブジェクトの定義
+const smallAnimalData = {
+    getName() {
+        return '小動物'
+    },
+    _favorite: '小動物',
+    get favorite() {
+        return this._favorite
+    },
+    set favorite(favorite) {
+        this._favorite = favorite
+    }
+}
+
+// 基本形
+//(arg1, arg2) => { /* 式 */ };
+
+// 引数が1つの場合は引数のカッコを省略できる
+// ただし型を書くとエラーになる
+//arg1 => { /* 式 */ };
+
+// 引数が0の場合はカッコが必要
+//() => { /* 式 */ };
+
+// 式の { } を省略すると、式の結果が return される
+//arg => arg * 2;
+
+// { } をつける場合は、値を返すときは return を書かなければならない
+/* arg => {
+    return arg * 2;
+}; */
